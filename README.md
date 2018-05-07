@@ -2,6 +2,17 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+### Roles of P, I, and D
+- <b>Proportionnal coefficient (P)</b><br/>
+The P parameter, causes the car to steer proportional(opposite) to the car's distance from the lane center(CTE), by multiplying the CTE by P value. For example, if the car is far to the right, then it steers hard to the left.
+- <b>Differential coefficient (D)</b><br/>
+The D parameter, causes the car to approach the center line smoothly. For exmple, when the car began to steer towards the CTE, the parameter D goes smaller, This will avoid the over-shooting by parameter P only.
+- <b>Integral coefficient (I)</b><br/>
+The I parameter,  prevents the PD controller from reaching the center line and compensate for systematic bias. For example, if the car has a tendency to steer a bit to the left by mistake, then parameter I will accumulate the value between the car's position and the CTE over time, and multiply this by the value of I.
+
+### Choice of hyperparameters
+Hyperparameters were tuned manually. In the beginning, the three parameters were all set to 0.0. Then I tune parameter P first and find '0.225' was a good value according to error. Because there is no sysmtematic bias coded in the simulator, I set parameter I to a very small value, and found the car drives better by setting it to 0.0.
+At last, I set parameter D to 1.0 first, and then increase the value by 0.25 each step, and find it has little effect after setting it to 3.225.
 
 ## Dependencies
 
