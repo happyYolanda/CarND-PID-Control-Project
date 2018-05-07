@@ -12,7 +12,7 @@ The I parameter,  prevents the PD controller from reaching the center line and c
 
 ### Choice of hyperparameters
 Hyperparameters were tuned manually. In the beginning, the three parameters were all set to 0.0. Then I tune parameter P first and find '0.225' was a good value according to error. Because there is no sysmtematic bias coded in the simulator, I set parameter I to a very small value, and found the car drives better by setting it to 0.0.
-At last, I set parameter D to 1.0 first, and then increase the value by 0.25 each step, and find it has little effect after setting it to 3.225.
+At last, I set parameter D to 1.0 first, and then increase the value little by little, and find it has little effect after setting it to 3.225.
 
 ## Dependencies
 
